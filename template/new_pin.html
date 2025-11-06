@@ -4,94 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Page</title>
     <style>
-        *{
-            padding: 0;
+        * {
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
-        
-        body{
-            height: 100vh;
-            background: linear-gradient(to right,white,gray);
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to right, white, gray);
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            gap: 30px;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
         }
 
-        .frm{
-            /* height: 200px; */
+        h2 {
+            text-shadow: 0px 0px 10px black;
+            text-align: center;
+        }
+
+        .frm {
+            width: 100%;
+            max-width: 450px;
             padding: 20px;
-            /* width: 400px; */
-            background: linear-gradient(to right,gray,white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(to right, gray, white);
             border-radius: 20px;
             box-shadow: 0px 0px 10px black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
-        form{
-            font-size: 20px;
-            text-shadow: 0px 0px 10px whitesmoke;
+        form {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
         }
 
-        #sub{
-            margin-left: 10px;
-            margin-top: 20px;
+        #sub {
+            margin-top: 15px;
             width: 100px;
+            border: none;
             border-radius: 7px;
             padding: 10px;
             font-weight: bold;
-           
-            &&:hover{
-                background-color: black;
-                color: white;
-            }
+            cursor: pointer;
         }
 
-        #btn{
-            padding: 10px;
-            margin-left: 1000px;
+        #sub:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #btn {
+            padding: 10px 20px;
             border-radius: 10px;
-            &&:hover{
-                background-color: black;
-                color: white;
-            }
-        }
-        
-        h2{
-            text-shadow: 0px 0px 10px black;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
-        h1{
-            margin-top: 20px;
+        #btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* ✅ Mobile Responsive */
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 18px;
+            }
+            form {
+                font-size: 16px;
+            }
+            #sub {
+                width: 90px;
+                padding: 8px;
+            }
+            #btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
-
 </head>
 <body>
 
-     {% if acc and name %}
-            <h2>Welcome {{ name }} ({{ acc }})</h2>
-        {% endif %}
-     <div class="frm">
-       
-        <form action="" method="post" align="center" >
+    {% if acc and name %}
+        <h2>Welcome {{ name }} ({{ acc }})</h2>
+    {% endif %}
+
+    <div class="frm">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-    
-            <input type="submit" value="submit" id="sub">
+            <input type="submit" value="Submit" id="sub">
         </form>
 
         {% if res %}
-            <h1>{{res}}</h1>
+            <h1>{{ res }}</h1>
         {% endif %}
     </div>
+
     <a href="/home"><button id="btn">HOME</button></a>
 
 </body>
 </html>
+

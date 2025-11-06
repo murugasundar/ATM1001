@@ -5,67 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        body{
-            height: 100vh;
-            background: linear-gradient(to right,white,gray);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 100px;
-        }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-        .frm{
-            /* height: 200px; */
-            padding: 20px;
-            width: 400px;
-            background: linear-gradient(to right,black,white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px black;
-        }
+    body{
+        min-height: 100vh;
+        background: linear-gradient(to right,white,gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        padding: 10px;
+    }
 
-        form{
-            font-size: 20px;
-            text-shadow: 0px 0px 10px whitesmoke;
-        }
+    h2{
+        text-align: center;
+        font-size: 24px;
+        text-shadow: 0px 0px 10px black;
+    }
 
-        button{
-            margin-left: 80px;
-            margin-top: 20px;
-            width: 100px;
-            border-radius: 7px;
-            padding: 10px;
-            font-weight: bold;
-           
-            &&:hover{
-                background-color: black;
-                color: white;
-            }
-        }
+    .frm{
+        width: 100%;
+        max-width: 450px;   /* ✅ Works on large and small screens */
+        padding: 20px;
+        background: linear-gradient(to right,black,white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px black;
+        gap: 20px;
+    }
 
-        #btn{
-            padding: 10px;
-            margin-left: 1000px;
-        }
-        
+    form{
+        width: 100%;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input{
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #555;
+    }
+
+    button{
+        width: 100%;
+        padding: 10px;
+        border-radius: 7px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover{
+        background-color: black;
+        color: white;
+    }
+
+    a{
+        text-decoration: none;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    #btn{
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #btn:hover{
+        background-color: black;
+        color: white;
+    }
+
+    p{
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .errors p{
+        color: red;
+    }
+
+    /* ✅ Mobile screen fix */
+    @media (max-width: 480px){
         h2{
-            text-shadow: 0px 0px 10px black;
+            font-size: 20px;
         }
+        .frm{
+            max-width: 90%;
+        }
+        form{
+            font-size: 16px;
+        }
+    }
+</style>
 
-        p{
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
         <h2>Welcome {{ name }} ({{acc}})</h2>

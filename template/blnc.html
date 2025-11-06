@@ -4,77 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balance Check</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        body{
-            height: 100vh;
-            background: linear-gradient(to right,white,gray);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 30px;
-        }
+   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
+    body{
+        min-height: 100vh;
+        background: linear-gradient(to right,white,gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .frm{
+        width: 100%;
+        max-width: 400px; /* ✅ Instead of fixed 600px */
+        padding: 20px;
+        background: linear-gradient(to right,gray,white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    form{
+        width: 100%;
+        font-size: 18px;
+    }
+
+    button{
+        margin-top: 20px;
+        width: 100%;
+        border-radius: 7px;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        background: black;
+        color: white;
+        transition: 0.3s;
+    }
+
+    button:hover{
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+
+    #btn{
+        width: 120px;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    h3{
+        color: black;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    p{
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* ✅ Mobile Responsive Fix */
+    @media (max-width: 480px){
         .frm{
-            /* height: 200px; */
-            padding: 20px;
-            width: 600px;
-            background: linear-gradient(to right,gray,white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px black;
+            max-width: 90%;
         }
-
+        h2{
+            font-size: 22px;
+        }
         form{
-            font-size: 20px;
-            text-shadow: 0px 0px 10px whitesmoke;
+            font-size: 16px;
         }
-
-        button{
-            margin-left: 20px;
-            margin-top: 20px;
-            width: 200px;
-            border-radius: 7px;
-            padding: 10px;
-            font-weight: bold;
-           
-            &&:hover{
-                background-color: black;
-                color: white;
-            }
-        }
-
-        #btn{
-            padding: 10px;
-            width: 80px;
-            margin-left: 1000px;
-            border-radius: 10px;
-            &&:hover{
-                background-color: black;
-                color: white;
-            }
-        }
-        
-        h3{
-            color: black;
-            font-size: 25px;
-            text-shadow: 0px 0px 30px white;
-        }
-
-        p{
-            margin-top: 20px;
-            font-size: 20px;
-        }
-    </style>
+    }
+</style>
 
 </head>
 <body>
